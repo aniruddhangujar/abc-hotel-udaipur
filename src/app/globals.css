@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-walnut: #29251F;
+  --color-ivory: #E9DDC7;
+  --color-sandstone: #A66F45;
+  --color-olive: #78806A;
+  --color-gold: #B99A66;
+  --color-terracotta: #77483A;
+  --color-charcoal: #37332E;
+  --color-cream: #F5EFE4;
+
+  --font-display: var(--font-bodoni), Georgia, serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-devanagari: var(--font-noto-devanagari), serif;
+}
+
+:root {
+  --bg-walnut: #29251F;
+  --bg-ivory: #E9DDC7;
+  --bg-cream: #F5EFE4;
+  --accent-sandstone: #A66F45;
+  --accent-olive: #78806A;
+  --accent-gold: #B99A66;
+  --accent-terracotta: #77483A;
+  --surface-charcoal: #37332E;
+}
+
+html {
+  background-color: #29251F;
+  color: #E9DDC7;
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  background-color: #29251F;
+  color: #E9DDC7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle handmade paper / sandstone micro-texture overlay */
+.palace-grain {
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.028;
+  mix-blend-mode: overlay;
+}
+
+/* Custom editorial focus outline */
+:focus-visible {
+  outline: 1.5px solid #B99A66;
+  outline-offset: 3px;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #29251F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6c5941;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B99A66;
+}
+
+/* Accessible skip link */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 1.5rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background-color: #29251F;
+  color: #F5EFE4;
+  border: 1px solid #B99A66;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
